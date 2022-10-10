@@ -1,11 +1,11 @@
-import Info from './components/Info';
+import Card from './components/Card';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Info/>
+        <Card/>
       </header>
     </div>
   );
