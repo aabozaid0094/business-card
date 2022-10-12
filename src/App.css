@@ -10,7 +10,7 @@
   color: white;
 }
 
-.business-card{max-width:400px;}
+.business-card{width:400px; max-width:calc(100% - 20px);}
 .business-card .buttons{justify-content:center;}
 .business-card .buttons button{display:flex; align-items:center;}
 .business-card .card-subtitle{color:#f3bf99;}
