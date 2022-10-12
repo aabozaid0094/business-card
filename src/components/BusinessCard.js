@@ -23,7 +23,7 @@ let BusinessCard = () => {
         github_url: "https://github.com/aabozaid0094",
     };
     return (
-        <div className='business-card text-center'>
+        <div className="business-card my-2 text-center">
             <Card bg="dark">
                 <Card.Img className="mw-100" variant="top" src={user.avatar_url} alt={user.name} />
                 <Card.Body>
