@@ -18,10 +18,10 @@ let BusinessCard = () => {
         location: "Egypt",
         bio: "Software Developer",
         email: "aabozaid0094@gmail.com",
-        linkedin_username: "AAboZaid7",
-        twitter_url: "AAboZaid7",
+        linkedin_url: "https://www.linkedin.com/",
+        twitter_url: "https://twitter.com/",
         facebook_url: "https://facebook.com/",
-        instagram_url: "https://twitter.com/",
+        instagram_url: "https://www.instagram.com/",
         github_url: "https://github.com/aabozaid0094",
     };
     return (
@@ -33,7 +33,7 @@ let BusinessCard = () => {
                     <Card.Subtitle as="h3">{user.bio}</Card.Subtitle>
                     <div className="blog">{user.blog}</div>
                     <CardGroup className="buttons p-2">
-                        <Button className="m-2" href={user.email} variant="light" size="lg">Email</Button>
+                        <Button className="m-2" href={`mailto:${user.email}`} variant="light" size="lg">Email</Button>
                         <Button className="m-2" href={user.linkedin_url} variant="primary" size="lg">LinkedIn</Button>
                     </CardGroup>
                     <Card.Text>
