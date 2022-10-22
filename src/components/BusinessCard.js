@@ -47,10 +47,10 @@ let BusinessCard = () => {
                 </Card.Body>
                 <Card.Footer>
                     <LinkedIconGroup justifyContent="center">
-                        <LinkedIcon href={user.twitter_url}><FaTwitter/></LinkedIcon>
-                        <LinkedIcon href={user.facebook_url}><FaFacebookSquare/></LinkedIcon>
-                        <LinkedIcon href={user.instagram_url}><FaInstagram/></LinkedIcon>
-                        <LinkedIcon href={user.github_url}><FaGithub/></LinkedIcon>
+                        <LinkedIcon href={user.twitter_url}><FaTwitter className="d-block"/></LinkedIcon>
+                        <LinkedIcon href={user.facebook_url}><FaFacebookSquare className="d-block"/></LinkedIcon>
+                        <LinkedIcon href={user.instagram_url}><FaInstagram className="d-block"/></LinkedIcon>
+                        <LinkedIcon href={user.github_url}><FaGithub className="d-block"/></LinkedIcon>
                     </LinkedIconGroup>
                 </Card.Footer>
             </Card>
