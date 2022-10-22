@@ -24,54 +24,79 @@ let BusinessCard = () => {
                     alt={UserData.name}
                 />
                 <Card.Body>
-                    <Card.Title as="h1">{UserData.name}</Card.Title>
-                    <Card.Subtitle as="h3">{UserData.bio}</Card.Subtitle>
-                    <div className="blog">{UserData.blog}</div>
-                    <CardGroup className="buttons p-2">
-                        <Button
-                            className="m-2"
-                            href={`mailto:${UserData.email}`}
-                            variant="light"
-                            size="lg"
-                        >
-                            <FaEnvelope /> Email
-                        </Button>
-                        <Button
-                            className="m-2"
-                            href={UserData.linkedin_url}
-                            variant="primary"
-                            size="lg"
-                        >
-                            <FaLinkedin /> LinkedIn
-                        </Button>
-                    </CardGroup>
+                    {UserData.name && (
+                        <Card.Title as="h1">{UserData.name}</Card.Title>
+                    )}
+                    {UserData.bio && (
+                        <Card.Subtitle as="h3">{UserData.bio}</Card.Subtitle>
+                    )}
+                    {UserData.blog && (
+                        <div className="blog">{UserData.blog}</div>
+                    )}
+                    {(UserData.email || UserData.linkedin_url) && (
+                        <CardGroup className="buttons p-2">
+                            <Button
+                                className="m-2"
+                                href={`mailto:${UserData.email}`}
+                                variant="light"
+                                size="lg"
+                            >
+                                <FaEnvelope /> Email
+                            </Button>
+                            <Button
+                                className="m-2"
+                                href={UserData.linkedin_url}
+                                variant="primary"
+                                size="lg"
+                            >
+                                <FaLinkedin /> LinkedIn
+                            </Button>
+                        </CardGroup>
+                    )}
                     <Card.Text className="text-start">
-                        <div className="about">
-                            <h4>About</h4>
-                            <p>{UserData.about}</p>
-                        </div>
-                        <div className="interests">
-                            <h4>Interests</h4>
-                            <p>{UserData.interests}</p>
-                        </div>
+                        {UserData.about && (
+                            <div className="about">
+                                <h4>About</h4>
+                                <p>{UserData.about}</p>
+                            </div>
+                        )}
+                        {UserData.interests && (
+                            <div className="interests">
+                                <h4>Interests</h4>
+                                <p>{UserData.interests}</p>
+                            </div>
+                        )}
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <LinkedIconGroup justifyContent="center">
-                        <LinkedIcon href={UserData.twitter_url}>
-                            <FaTwitter className="d-block" />
-                        </LinkedIcon>
-                        <LinkedIcon href={UserData.facebook_url}>
-                            <FaFacebookSquare className="d-block" />
-                        </LinkedIcon>
-                        <LinkedIcon href={UserData.instagram_url}>
-                            <FaInstagram className="d-block" />
-                        </LinkedIcon>
-                        <LinkedIcon href={UserData.github_url}>
-                            <FaGithub className="d-block" />
-                        </LinkedIcon>
-                    </LinkedIconGroup>
-                </Card.Footer>
+                {(UserData.twitter_url ||
+                    UserData.facebook_url ||
+                    UserData.instagram_url ||
+                    UserData.github_url) && (
+                    <Card.Footer>
+                        <LinkedIconGroup justifyContent="center">
+                            {UserData.twitter_url && (
+                                <LinkedIcon href={UserData.twitter_url}>
+                                    <FaTwitter className="d-block" />
+                                </LinkedIcon>
+                            )}
+                            {UserData.facebook_url && (
+                                <LinkedIcon href={UserData.facebook_url}>
+                                    <FaFacebookSquare className="d-block" />
+                                </LinkedIcon>
+                            )}
+                            {UserData.instagram_url && (
+                                <LinkedIcon href={UserData.instagram_url}>
+                                    <FaInstagram className="d-block" />
+                                </LinkedIcon>
+                            )}
+                            {UserData.github_url && (
+                                <LinkedIcon href={UserData.github_url}>
+                                    <FaGithub className="d-block" />
+                                </LinkedIcon>
+                            )}
+                        </LinkedIconGroup>
+                    </Card.Footer>
+                )}
             </Card>
         );
     });
